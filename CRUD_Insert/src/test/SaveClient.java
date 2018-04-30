@@ -33,7 +33,8 @@ public class SaveClient {
 		
 		int pk=(Integer)session.save(st);// session.save method will resurn primary key
 		System.out.println("Primary key Returned---------->"+pk);
-		t.commit();
+		
+		t.commit();//data will execute here or will be inserted here
 		
 		session.close();
 		sf.close();
