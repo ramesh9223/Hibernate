@@ -31,7 +31,14 @@ public class SaveClient {
 		st.setEmail("ramesh9223@gmail.com");
 		st.setAddress("Pune");
 		
+		Student st1= new Student();
+		st1.setId(222);
+		st1.setName("Rakesh");
+		st1.setEmail("rakesh@gmail.com");
+		st1.setAddress("Hyd");
+		
 		int pk=(Integer)session.save(st);// session.save method will resurn primary key
+		session.save(st1);
 		System.out.println("Primary key Returned---------->"+pk);
 		
 		t.commit();//data will execute here or will be inserted here
