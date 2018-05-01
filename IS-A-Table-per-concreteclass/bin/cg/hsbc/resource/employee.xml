@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+ <hibernate-mapping>
+ 	<class name="cg.hsbc.beans.Employee">
+          <id name="id"/>
+          
+          <!-- <discriminator column="etype"/> -->
+          
+          <property name="name"/>
+          <property name="email"/>
+          <property name="salary"/>
+          
+          <!-- <subclass name="cg.hsbc.beans.SEmployee" discriminator-value="se"></subclass>
+          <subclass name="cg.hsbc.beans.HEmployee" discriminator-value="he"></subclass>
+          <subclass name="cg.hsbc.beans.Admin" discriminator-value="admin"></subclass> -->
+          
+         <!--  <joined-subclass name="cg.hsbc.beans.SEmployee" table="semployee">
+          		<key column="id"/>
+          		<property name="tool"/>
+          		
+          </joined-subclass >
+          		
+           <joined-subclass name="cg.hsbc.beans.HEmployee" table="hemployee">
+           		<key column="id"/>
+           		<property name="wh"/>
+          		
+           </joined-subclass>
+           			
+            <joined-subclass name="cg.hsbc.beans.Admin" table="admin">
+            		<key column="id"/>
+            		<property name="barnch"/>
+          		
+            </joined-subclass> -->
+            
+            <union-subclass name="cg.hsbc.beans.Admin" table="admin">
+            	<property name="barnch"/>
+            </union-subclass>
+            
+             <union-subclass name="cg.hsbc.beans.HEmployee" table="hemployee">
+            	<property name="wh"/>
+            </union-subclass>
+            
+             <union-subclass name="cg.hsbc.beans.SEmployee" table="semployee">
+            	<property name="tool"/>
+            </union-subclass>
+            
+     </class>
+</hibernate-mapping>
