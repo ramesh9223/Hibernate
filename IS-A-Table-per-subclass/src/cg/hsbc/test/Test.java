@@ -38,7 +38,7 @@ public class Test {
 		session.close();
 		sf.close();
 		
-		System.out.println("Table PER Class Demo Completed");
+		System.out.println("Table PER SubClass Demo Completed");
 	}
 
 }
